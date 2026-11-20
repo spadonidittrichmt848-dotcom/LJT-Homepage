@@ -1,0 +1,19 @@
+{% include base_path %}
+
+<ul class="publication-list">
+  {% for publication in site.data.publications %}
+  <li class="archive__item" id="publication-{{ publication.id }}" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <h3 itemprop="name">{{ publication.title }}</h3>
+    <p itemprop="author">{{ publication.authors | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+    <p class="page__meta">
+      <em itemprop="isPartOf">{{ publication.venue }}</em>, {{ publication.year }}.
+      {% if publication.author_role %}<span class="publication-role">{{ publication.author_role }}.</span>{% endif %}
+    </p>
+    {% if publication.code_repository %}
+    <p class="page__meta">Code repository: {{ publication.code_repository }}</p>
+    {% elsif publication.code_note %}
+    <p class="page__meta">{{ publication.code_note }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

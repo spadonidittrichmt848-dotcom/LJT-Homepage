@@ -1,5 +1,10 @@
-<script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
+{% include base_path %}
+
+<!-- Load the supplied source files directly: the fork does not include the
+     upstream JavaScript build workflow or its generated main.min.js bundle. -->
+<script src="{{ base_path }}/assets/js/plugins/jquery.greedy-navigation.js"></script>
+<script src="{{ base_path }}/assets/js/_main.js"></script>
+<script type="module" src="{{ base_path }}/assets/js/theme.js"></script>
 
 {% include analytics.html %}
-
 {% include comments-providers/scripts.html %}
