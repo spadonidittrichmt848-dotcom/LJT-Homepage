@@ -4,6 +4,8 @@ title: "About"
 author_profile: true
 ---
 
+{% include base_path %}
+
 ## About
 
 I am **Junteng Liu**, a first-year PhD candidate at the **HKUST NLP Group** at the Hong Kong University of Science and Technology, supervised by **Professor Junxian He**. My research focuses on **natural language processing** and **machine learning**.
@@ -42,7 +44,7 @@ I graduated from Shanghai Jiao Tong University in June 2024.
 My full publication list is also available on the [Publications page]({{ base_path }}/publications/).
 
 {% if site.author.googlescholar %}
-You can also find my articles on [my Google Scholar profile]({{ site.author.googlescholar }}). 
+You can also find my articles on [my Google Scholar profile]({{ site.author.googlescholar }}).
 {% endif %}
 
 {% include publication-list.html %}
